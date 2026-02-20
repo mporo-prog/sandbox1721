@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Песочница</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <section class="task" id="task-1">
+      <div class="task__header">
+        <h2 class="task__title">Задача 1 — Случайный цвет кнопки</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Сделай обработчик click на кнопке. Генерируй случайный цвет (0–255 для R,G,B), преобразуй в HEX и поставь backgroundColor. Текст с HEX выведи рядом."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">
+        При каждом клике кнопка получает случайный цвет и показывает HEX-код.
+      </p>
+      <div class="task-area">
+        <div class="row">
+          <button class="btn" data-js="t1-btn" type="button">Нажми меня</button>
+          <output class="mono pill" data-js="t1-hex">#??????</output>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-2">
+      <div class="task__header">
+        <h2 class="task__title">Задача 2 — Счётчик символов</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Повесь input-событие на поле. Считай длину строки (value.length) и обновляй счётчик. Ограничение уже стоит: 0–50."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">
+        Показывай количество введённых символов (максимум 50).
+      </p>
+      <div class="task__work">
+        <div class="task-area">
+          <label class="field">
+            <span class="field__label">Текст</span>
+            <input class="input" data-js="t2-input" maxlength="50" />
+          </label>
+          <div class="meta">
+            <span class="mono" data-js="t2-count">0</span><span>/</span
+            ><span class="mono">50</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-3">
+      <div class="task__header">
+        <h2 class="task__title">Задача 3 — Добавить элемент в список</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Считай текст из input по кнопке. Если пусто — ничего не добавляй (или покажи ошибку). Иначе создай <li> через document.createElement и append."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">
+        Введи текст, нажми «Добавить» — и добавь пункт в список.
+      </p>
+      <div class="task__work">
+        <div class="task-area">
+          <div class="row">
+            <input class="input" data-js="t3-input" placeholder="Молоко" />
+            <button class="btn" data-js="t3-add" type="button">Добавить</button>
+          </div>
+          <ul class="list" data-js="t3-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-4">
+      <div class="task__header">
+        <h2 class="task__title">Задача 4 — Счётчик: +1, −1, Сброс</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Сделай переменную count. По кнопкам увеличивай/уменьшай, по «Сброс» ставь 0. Отображай значение в output."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">Реализуй простой счётчик.</p>
+      <div class="task__work">
+        <div class="task-area">
+          <div class="row">
+            <button class="btn" data-js="t4-minus" type="button">−1</button>
+            <button class="btn" data-js="t4-plus" type="button">+1</button>
+            <button class="btn" data-js="t4-reset" type="button">Сброс</button>
+            <output class="mono pill" data-js="t4-out">0</output>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-5">
+      <div class="task__header">
+        <h2 class="task__title">Задача 5 — Модальное окно</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Сделай модалку: по клику показывай (убирай hidden). Закрывай по кнопке, по клику на фон и по Escape."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">Открыть/закрыть модальное окно.</p>
+      <div class="task__work">
+        <div class="task-area">
+          <button class="btn" data-js="t5-open" type="button">
+            Открыть модалку
+          </button>
+
+          <div class="modal" data-js="t5-modal" hidden>
+            <div class="modal__backdrop" data-js="t5-backdrop"></div>
+            <div class="modal__dialog" role="dialog" aria-modal="true">
+              <div class="modal__title">Заголовок</div>
+              <p class="modal__text">
+                Реализуй логику открытия/закрытия в <code>script.js</code>.
+              </p>
+              <div class="row">
+                <button class="btn" data-js="t5-close" type="button">
+                  Закрыть
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-6">
+      <div class="task__header">
+        <h2 class="task__title">Задача 6 — Вкладки</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Сделай вкладки: по клику на кнопку меняй активный класс у вкладки и показывай соответствующую панель. Используй data-атрибуты."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">
+        Кликни по вкладке — покажи соответствующий контент.
+      </p>
+      <div class="task__work">
+        <div class="task-area">
+          <div class="tabs" data-js="t6-tabs">
+            <div class="tabs__bar" role="tablist">
+              <button class="tab is-active" data-tab="a" type="button">
+                Вкладка A
+              </button>
+              <button class="tab" data-tab="b" type="button">Вкладка B</button>
+              <button class="tab" data-tab="c" type="button">Вкладка C</button>
+            </div>
+            <div class="tabs__panes">
+              <div class="pane is-active" data-pane="a">Панель A</div>
+              <div class="pane" data-pane="b">Панель B</div>
+              <div class="pane" data-pane="c">Панель C</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-7">
+      <div class="task__header">
+        <h2 class="task__title">Задача 7 — Разворот строки</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Считай строку из input. По кнопке выведи её в обратном порядке. Подсказка: split(''), reverse(), join('') или цикл."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">По кнопке переверни строку и покажи результат.</p>
+      <div class="task__work">
+        <div class="task-area">
+          <div class="row">
+            <input class="input" data-js="t7-input" placeholder="Привет" />
+            <button class="btn" data-js="t7-run" type="button">
+              Развернуть
+            </button>
+            <output class="mono pill" data-js="t7-out">—</output>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-8">
+      <div class="task__header">
+        <h2 class="task__title">Задача 8 — Калькулятор (2 числа)</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Считай два числа из input (parseFloat). По кнопкам + и × обновляй результат. Учитывай NaN (например, выводи 'NaN')."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">Реализуй сложение и умножение.</p>
+      <div class="task__work">
+        <div class="task-area">
+          <div class="row">
+            <input class="input" data-js="t8-a" placeholder="A" />
+            <input class="input" data-js="t8-b" placeholder="B" />
+            <button class="btn" data-js="t8-add" type="button">+</button>
+            <button class="btn" data-js="t8-mul" type="button">×</button>
+            <output class="pill mono" data-js="t8-out">?</output>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-9">
+      <div class="task__header">
+        <h2 class="task__title">Задача 9 — Показать/скрыть текст</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="По клику переключай видимость блока (например, через hidden или класс). Также меняй текст кнопки «Показать/Скрыть»."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">Кнопка должна прятать и показывать блок текста.</p>
+      <div class="task__work">
+        <div class="task-area">
+          <div class="row">
+            <button class="btn" data-js="t9-toggle" type="button">
+              Скрыть
+            </button>
+          </div>
+          <p data-js="t9-text">Этот текст можно скрывать и показывать.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-10">
+      <div class="task__header">
+        <h2 class="task__title">Задача 10 — Ползунок меняет размер квадрата</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Повесь input-событие на range. Бери value и меняй ширину/высоту квадрата через style.width/style.height (в px)."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">Двигая ползунок, меняй размер квадрата.</p>
+      <div class="task__work">
+        <div class="task-area">
+          <div class="row">
+            <input
+              class="input"
+              data-js="t10-range"
+              type="range"
+              min="20"
+              max="200"
+              value="60"
+            />
+            <output class="mono pill" data-js="t10-out">60px</output>
+          </div>
+          <div class="box" data-js="t10-box" aria-label="Квадрат"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-11">
+      <div class="task__header">
+        <h2 class="task__title">Задача 11 — Обратный отсчёт</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Сделай таймер на N секунд. По «Старт» запускай setInterval и уменьшай значение. По «Стоп» — clearInterval. Не допускай двух интервалов одновременно."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">Запуск/остановка обратного отсчёта (секунды).</p>
+      <div class="task__work">
+        <div class="task-area">
+          <div class="row">
+            <input class="input" data-js="t11-seconds" placeholder="10" />
+            <button class="btn" data-js="t11-start" type="button">Старт</button>
+            <button class="btn" data-js="t11-stop" type="button">Стоп</button>
+            <output class="pill mono" data-js="t11-out">—</output>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-12">
+      <div class="task__header">
+        <h2 class="task__title">Задача 12 — Прогресс-бар</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="По кнопке увеличивай прогресс на 10% (макс 100). Обновляй ширину полосы через style.width и текст процента."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">Каждый клик увеличивает прогресс на 10%.</p>
+      <div class="task__work">
+        <div class="task-area">
+          <div class="row">
+            <button class="btn" data-js="t12-plus" type="button">+10%</button>
+            <output class="pill mono" data-js="t12-label">0%</output>
+          </div>
+          <div class="progress" aria-label="Прогресс">
+            <div
+              class="progress__bar"
+              data-js="t12-bar"
+              style="width: 0%"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-13">
+      <div class="task__header">
+        <h2 class="task__title">Задача 13 — Горячие клавиши</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Слушай keydown на document. Например: Ctrl+K очищает поле, Escape снимает фокус. Используй e.ctrlKey и e.key."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">Сделай 1–2 горячие клавиши.</p>
+      <div class="task__work">
+        <div class="task-area">
+          <label class="field">
+            <span class="field__label">Поле для экспериментов</span>
+            <input
+              class="input"
+              data-js="t13-input"
+              placeholder="Нажми Ctrl+K…"
+            />
+          </label>
+          <output class="pill" data-js="t13-out">Пока ничего не нажато.</output>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-14">
+      <div class="task__header">
+        <h2 class="task__title">Задача 14 — Случайная цитата</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Создай массив цитат в JS. По кнопке выбирай случайную и выводи в блок. Подсказка: Math.random() и Math.floor()."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">По кнопке показывай случайную цитату из массива.</p>
+      <div class="task__work">
+        <div class="task-area">
+          <div class="row">
+            <button class="btn" data-js="t14-next" type="button">
+              Следующая
+            </button>
+          </div>
+          <p class="mono" data-js="t14-out">Нажми «Следующая».</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-15">
+      <div class="task__header">
+        <h2 class="task__title">Задача 15 — Перетаскивание и координаты</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Сделай drag мышью: mousedown → запомнить сдвиг, mousemove → менять left/top у элемента (position:absolute), mouseup → остановить. Координаты выводи рядом (например, x/y в px)."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">
+        Перетаскивай блок по области и выводи его координаты.
+      </p>
+      <div class="task__work">
+        <div class="task-area">
+          <div class="row">
+            <output class="mono pill" data-js="t15-coords">x: 0, y: 0</output>
+          </div>
+          <div
+            class="drag-area"
+            data-js="t15-area"
+            aria-label="Область для перетаскивания"
+          >
+            <div class="drag-item" data-js="t15-item">ТАЩИ</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-16">
+      <div class="task__header">
+        <h2 class="task__title">Задача 16 — Простая анимация</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Сделай анимацию через CSS: по клику добавляй класс (например .is-bouncing). Используй keyframes."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">
+        По кнопке запускай анимацию квадрата (через CSS-класс).
+      </p>
+      <div class="task__work">
+        <div class="task-area">
+          <div class="row">
+            <button class="btn" data-js="t16-animate" type="button">
+              Анимировать
+            </button>
+          </div>
+          <div class="box" data-js="t16-box" aria-label="Квадрат"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-17">
+      <div class="task__header">
+        <h2 class="task__title">Задача 17 — Спавн блоков в области</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Возьми область через querySelector. Каждую секунду (setInterval) создавай div через document.createElement, задай width/height 100px и background: #111, затем append в область."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">
+        Блоки просто появляются в области каждые 1 секунду со случайными
+        координатами.
+      </p>
+      <div class="task__work">
+        <div class="task-area">
+          <div
+            class="game-area"
+            data-js="t17-area"
+            aria-label="Область задачи 17"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-18">
+      <div class="task__header">
+        <h2 class="task__title">Задача 18 — Движение справа налево</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Спавн: x = area.clientWidth (старт за правой границей). Движение: requestAnimationFrame, каждый кадр уменьшай x. Удаление: когда x + 100 < 0, remove()."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">
+        Блоки едут справа налево, стартуют за правой границей и удаляются слева.
+      </p>
+      <div class="task__work">
+        <div class="task-area">
+          <div
+            class="game-area"
+            data-js="t18-area"
+            aria-label="Область задачи 18"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-19">
+      <div class="task__header">
+        <h2 class="task__title">Задача 19 — Случайная высота старта</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Для вертикали вычисляй случайный y: Math.floor(Math.random() * (area.clientHeight - 100)). top задавай в px, left/удаление оставь как в прошлом задании."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">
+        Блоки двигаются так же, но стартуют на разных высотах.
+      </p>
+      <div class="task__work">
+        <div class="task-area">
+          <div
+            class="game-area"
+            data-js="t19-area"
+            aria-label="Область задачи 19"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-20">
+      <div class="task__header">
+        <h2 class="task__title">Задача 20 — Очки за клик</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Повесь click на каждый блок: score += 1, обнови textContent счетчика, затем удали кликнутый блок. Удобно хранить score в отдельной переменной."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">
+        Кликайте по блокам: за каждый клик начисляется очко и блок исчезает.
+      </p>
+      <div class="task__work">
+        <div class="task-area">
+          <output class="pill mono"
+            >Счёт: <span data-js="t20-score">0</span></output
+          >
+          <div
+            class="game-area"
+            data-js="t20-area"
+            aria-label="Область задачи 20"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="task-21">
+      <div class="task__header">
+        <h2 class="task__title">Задача 21 — Жизни и перезапуск</h2>
+        <span
+          class="hint"
+          tabindex="0"
+          aria-label="Подсказка"
+          title="Добавь lives = 3. Когда блок улетел за левую границу — lives -= 1 и обнови UI. При lives === 0 останови setInterval/requestAnimationFrame, покажи overlay и кнопку restart (сброс состояния и новый запуск)."
+          >?</span
+        >
+      </div>
+      <p class="task__desc">
+        Пропустите 3 блока — игра закончится. Нажмите кнопку, чтобы начать
+        заново.
+      </p>
+      <div class="task__work">
+        <div class="task-area">
+          <div class="row">
+            <output class="pill mono"
+              >Счёт: <span data-js="t21-score">0</span></output
+            >
+            <output class="pill mono"
+              >Жизни: <span data-js="t21-lives">3</span></output
+            >
+          </div>
+          <div
+            class="game-area"
+            data-js="t21-area"
+            aria-label="Область задачи 21"
+          >
+            <div class="game-over" data-js="t21-game-over" hidden>
+              <p class="game-over__title">Игра окончена</p>
+              <button class="btn" data-js="t21-restart" type="button">
+                Перезапустить
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./tooltip.js" defer></script>
+    <script src="./script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+  background: #f5f5f5;
+  line-height: 1.4;
+}
+
+.muted {
+  color: #666;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 50vh;
+  min-height: 540px;
+  padding: 24px 16px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.task:nth-child(even) {
+  background: #fafafa;
+}
+
+.task__title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.task__desc {
+  color: #444;
+  max-width: 70ch;
+}
+
+.task__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hint {
+  margin-left: auto;
+  cursor: help;
+  border: 1px solid #111;
+  padding: 2px 8px;
+  user-select: none;
+  background: #fff;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #000;
+}
+
+.input,
+.textarea {
+  border: 1px solid #111;
+  padding: 8px 10px;
+  background: #fff;
+  color: #111;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: 2px solid #111;
+  outline-offset: 1px;
+}
+
+.pill {
+  border: 1px solid #111;
+  padding: 6px 10px;
+  display: inline-block;
+  background: #fff;
+}
+
+.field__label {
+  display: inline-block;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.field {
+  display: inline-block;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+.pane {
+  display: none;
+  padding: 8px 0;
+}
+.pane.is-active {
+  display: block;
+}
+.tab.is-active {
+  font-weight: bold;
+}
+
+.modal[hidden] {
+  display: none;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+}
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.modal__dialog {
+  position: relative;
+  margin: 120px auto 0;
+  max-width: 520px;
+  background: #fff;
+  border: 1px solid #111;
+  padding: 16px;
+}
+
+.modal__title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.modal__text {
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.progress {
+  width: 420px;
+  height: 16px;
+  border: 1px solid #111;
+  background: #fff;
+}
+.progress__bar {
+  height: 100%;
+  width: 0%;
+  background: #111;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #111;
+  background: #fff;
+}
+
+.task-area {
+  border: 1px dashed #111;
+  padding: 16px;
+  background: #fff;
+  display: grid;
+  gap: 12px;
+}
+
+.drag-area {
+  position: relative;
+  height: 260px;
+  border: 1px dashed #111;
+  background: #fff;
+}
+
+.drag-item {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 90px;
+  height: 44px;
+  border: 1px solid #111;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: move;
+}
+
+.game-area {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  height: 320px;
+  border: 1px solid #111;
+  background: #f7f7f7;
+  overflow: hidden;
+}
+
+.target-block {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #111;
+  cursor: pointer;
+}
+
+.game-over[hidden] {
+  display: none;
+}
+
+.game-over {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 10px;
+  justify-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  z-index: 3;
+}
+
+.game-over__title {
+  font-size: 20px;
+  font-weight: 700;
+}
