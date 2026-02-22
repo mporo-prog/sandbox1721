@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function spawn5(){
       let div2 = document.createElement('div')
+      div2.classList.add('newDiv')
       div2.style.position = 'absolute'
       div2.style.width = '100px'
       div2.style.height = '100px'
@@ -139,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       requestAnimationFrame(() => {
         if(lives.textContent == "0"){
-          gameOver.hidden = false
+          gameOver.style.visibility = 'visible'
           return
         }
         step5(div2)
@@ -180,12 +181,14 @@ document.addEventListener("DOMContentLoaded", () => {
     
     
   button21.addEventListener("click", () => {
-    gameOver.hidden = true
+    gameOver.style.visibility = 'hidden'
     lives.textContent = 3
     span.textContent = 0
-    while (box5.firstChild) {
-        box5.removeChild(box5.firstChild);
-    }
+    let list = document.querySelectorAll('.newDiv')
+    list.forEach(element => {
+      element.remove()
+    });
   })
+
 game()
 });
