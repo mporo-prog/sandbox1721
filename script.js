@@ -118,64 +118,67 @@ document.addEventListener("DOMContentLoaded", () => {
   let box4 = document.querySelector("[data-js='t20-area']")
   setInterval(spawn4, 1000)
 
-function game(){
+  function game(){
 
-  function spawn5(){
-    let div2 = document.createElement('div')
-    div2.style.position = 'absolute'
-    div2.style.width = '100px'
-    div2.style.height = '100px'
-    div2.style.background = '#111'
-    let top1 = randomMax(maxHeight)
-    div2.style.left = `${box5.clientWidth}px`
-    div2.style.top = `${top1}px`
-    box5.append(div2)
-    requestAnimationFrame(() => {
-      if(lives.textContent == "2"){
-        gameOver.hidden = false
-        return
+    function spawn5(){
+      let div2 = document.createElement('div')
+      div2.style.position = 'absolute'
+      div2.style.width = '100px'
+      div2.style.height = '100px'
+      div2.style.background = '#111'
+      let top1 = randomMax(maxHeight)
+      div2.style.left = `${box5.clientWidth}px`
+      div2.style.top = `${top1}px`
+      box5.append(div2)
+      div2.addEventListener("click", () => {
+        let score = span.textContent++
+        span.style.textContent = score
+        div2.style.hidden = true
+        console.log(div2.style.hidden)
+        div2.remove()
+      })
+      requestAnimationFrame(() => {
+        if(lives.textContent == "0"){
+          gameOver.hidden = false
+          return
+        }
+        step5(div2)
+      })
+      if(lives.textContent == "0"){
+          return
       }
-      step5(div2)
-    })
-    div2.addEventListener("click", () => {
-      let score = span.textContent++
-      span.style.textContent = score
-      div2.remove()
-    })
-    if(lives.textContent == "2"){
-        return
     }
-  }
-  
-  function step5(div){
-    let currentLeft = parseInt(div.style.left)
-    let nextLeft = currentLeft - 1
-    div.style.left = `${nextLeft}px`
-    if(nextLeft + div.clientWidth <= 0){
-      lives.textContent--
-      if(lives.textContent == "2"){
+    
+    function step5(div){
+      let currentLeft = parseInt(div.style.left)
+      let nextLeft = currentLeft - 1
+      div.style.left = `${nextLeft}px`
+      if(nextLeft + div.clientWidth <= 0){
+        if(!div.style.hidden){
+          lives.textContent--
+        }
+        if(lives.textContent == "0"){
+          return
+        }
+        div.remove()
         return
       }
-      div.remove()
-      return
+      requestAnimationFrame(() => {
+        if(lives.textContent == "0"){
+          return
+        }
+        step5(div)
+      })
     }
-    requestAnimationFrame(() => {
-      if(lives.textContent == "2"){
-        return
-      }
-      step5(div)
-    })
+    setInterval(spawn5, 1000)
   }
-  setInterval(spawn5, 700)
-}
-  
-game()
   let span = document.querySelector("[data-js='t21-score']")
   let box5 = document.querySelector("[data-js='t21-area']")
   let lives = document.querySelector("[data-js='t21-lives']")
   let gameOver = document.querySelector("[data-js='t21-game-over']")
   let button21 = document.querySelector('[data-js="t21-restart"]')
-  
+    
+    
   button21.addEventListener("click", () => {
     gameOver.hidden = true
     lives.textContent = 3
@@ -183,7 +186,6 @@ game()
     while (box5.firstChild) {
         box5.removeChild(box5.firstChild);
     }
-
-    game()
   })
+game()
 });
